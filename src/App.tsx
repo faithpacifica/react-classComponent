@@ -5,7 +5,6 @@ import { SEARCH } from './consts/index'
 import { getPeoples } from './api/index'
 import ResponseApi from './types/api'
 import People from 'types/people'
-import ErrorBoundary from './components/ErrorBoundary'
 
 type State = {
   defaultValue: string
@@ -31,7 +30,7 @@ class App extends Component<object, State> {
 
   render() {
     return (
-      <ErrorBoundary className='container'>
+      <div className='container'>
         <div className='home'>
           <section className='section-search'>
             <div className='search-title'>Type name from the Star war</div>
@@ -47,7 +46,7 @@ class App extends Component<object, State> {
 
           <MainSection isLoading={this.state.isLoading} data={this.state.response} />
         </div>
-      </ErrorBoundary>
+      </div>
     )
   }
 }

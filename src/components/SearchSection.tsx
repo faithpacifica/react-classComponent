@@ -1,4 +1,3 @@
-import * as React from 'react'
 import { Component, FormEvent } from 'react'
 
 type Props = {
@@ -7,7 +6,7 @@ type Props = {
   onChange: (value: string) => Promise<void>
 }
 
-class Search extends Component<Props> {
+class SearchSection extends Component<Props> {
   handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     this.props.onChange(e.currentTarget.search.value)
@@ -26,4 +25,4 @@ class Search extends Component<Props> {
   }
 }
 
-export default Search
+export default SearchSection

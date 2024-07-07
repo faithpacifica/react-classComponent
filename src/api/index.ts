@@ -1,5 +1,5 @@
-import ResponseApi from '../../types/api'
-import People from '../../types/people'
+import ResponseApi from '../types/api'
+import People from '../types/people'
 
 export async function getPeoples(search: string = ''): 
 Promise<ResponseApi<People>> {
