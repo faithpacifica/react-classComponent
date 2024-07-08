@@ -11,8 +11,8 @@ export default class DescriptionField extends Component<Props> {
       <div className='person-description'>
         <div className='label'>{this.props.label + ':'}</div>
         <div className='extra-info'>{this.props.children}</div>
-        <hr /></div>
-     
+        <hr />
+      </div>
     )
   }
 }

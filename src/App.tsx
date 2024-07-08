@@ -5,6 +5,8 @@ import { SEARCH } from './consts/index'
 import { getPeoples } from './api/index'
 import ResponseApi from './types/api'
 import People from 'types/people'
+import ErrorBoundary from './components/ErrorBoundry'
+import ErrorShowingButton from './components/ErrorShowingButton'
 
 type State = {
   defaultValue: string
@@ -30,23 +32,27 @@ class App extends Component<object, State> {
 
   render() {
     return (
-      <div className='container'>
-        <div className='home'>
-          <section className='section-search'>
-            <div className='search-title'>Type name from the Star war</div>
-            <br />
-            <SearchSection
-              isLoading={this.state.isLoading}
-              defaultValue={this.state.defaultValue}
-              onChange={this.handleChange}
-            />
-          </section>
+      <ErrorBoundary fallback={<h1>Oops,You have got some errors!!</h1>}>
+        <div className='container'>
+          <div className='home'>
+            <section className='section-search'>
+              <div className='search-title'>Type name from the Star war</div>
+              <br />
+              <SearchSection
+                isLoading={this.state.isLoading}
+                defaultValue={this.state.defaultValue}
+                onChange={this.handleChange}
+              />
+            </section>
 
-          <hr />
+            <ErrorShowingButton />
 
-          <MainSection isLoading={this.state.isLoading} data={this.state.response} />
+            <hr />
+
+            <MainSection isLoading={this.state.isLoading} data={this.state.response} />
+          </div>
         </div>
-      </div>
+      </ErrorBoundary>
     )
   }
 }

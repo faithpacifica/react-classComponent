@@ -1,8 +1,7 @@
 import ResponseApi from '../types/api'
 import People from '../types/people'
 
-export async function getPeoples(search: string = ''): 
-Promise<ResponseApi<People>> {
+export async function getPeoples(search: string = ''): Promise<ResponseApi<People>> {
   try {
     const url = search
       ? `https://swapi.dev/api/people/?search=${search}&page=1`
@@ -13,6 +12,6 @@ Promise<ResponseApi<People>> {
     }
     return result.json()
   } catch {
-    throw new Error("Oops, something went wrong")
+    throw new Error('Oops, something went wrong')
   }
 }
