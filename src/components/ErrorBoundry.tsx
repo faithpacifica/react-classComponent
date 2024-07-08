@@ -1,5 +1,4 @@
 import { Component, ErrorInfo, ReactNode } from 'react'
-import * as React from 'react'
 
 type State = {
   hasError: boolean
